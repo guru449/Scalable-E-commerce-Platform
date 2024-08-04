@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.5.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // AWS SDK for S3
+    implementation 'com.amazonaws:aws-java-sdk-s3:1.12.538'
+
+//    // SLF4J for logging (optional, but recommended)
+//    implementation 'org.slf4j:slf4j-api:1.7.36'
+//    implementation 'org.slf4j:slf4j-simple:1.7.36'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//    implementation 'org.liquibase:liquibase-core:4.3.5' // Add the specific version
+//    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+//    implementation 'com.h2database:h2' // For an embedded database
+//    implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+//    implementation 'io.r2dbc:r2dbc-postgresql' // Replace with your specific R2DBC driver
+}
+
+test {
+    useJUnitPlatform()
+}
