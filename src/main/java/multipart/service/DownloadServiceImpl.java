@@ -15,8 +15,9 @@ public class DownloadServiceImpl implements  DownloadService {
     @Override
     public void download() {
     Regions clientRegion = Regions.US_EAST_1;
-    String bucketName = "multiparts3";
-    String key = "multipart/upload/";
+
+    String bucketName = "your bucket name";
+    String key = "data";
     String downloadFilePath = "/Users/guru/Downloads/MultipartUpload/src/test/download.csv";
     try {
         AmazonS3 s3Client = AmazonS3ClientBuilder.standard()

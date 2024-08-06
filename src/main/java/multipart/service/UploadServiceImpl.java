@@ -7,6 +7,8 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -14,12 +16,16 @@ import java.util.List;
 
 public class UploadServiceImpl implements UploadService {
 
+    private static final Logger logger = LoggerFactory.getLogger(UploadServiceImpl.class);
+    private final String accessKey = "your access key";
+    private final String secretKey = "your secret key";
     @Override
     public void upload() {
 
         Regions clientRegion = Regions.US_EAST_1;
-        String bucketName = "multiparts3";
-        String keyName = "/Users/guru/Downloads/MultipartUpload/src/test/data_0.csv";
+
+        String bucketName = "your bucket name";
+        String keyName = "data";
         String filePath = "/Users/guru/Downloads/MultipartUpload/src/test/data_0.csv";
 
         File file = new File(filePath);
