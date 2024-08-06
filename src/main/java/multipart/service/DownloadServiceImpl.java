@@ -7,11 +7,19 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 public class DownloadServiceImpl implements  DownloadService {
+
+    private static final Logger logger = LoggerFactory.getLogger(DownloadServiceImpl.class);
+
+    private final String accessKey = "your access key";
+    private final String secretKey = "your  secret key";
+
     @Override
     public void download() {
     Regions clientRegion = Regions.US_EAST_1;
